@@ -1,8 +1,11 @@
 import styled from "styled-components"
 
+const StyledFlex = styled.div`
+  display: flex;
+`
 
 const StyledImage = styled.div`
-  background-image: url('/background.png');
+  background-image: url('${props => props.image}');
   background-repeat: no-repeat;
   background-position: right;
   background-size: cover;
@@ -11,11 +14,12 @@ const StyledImage = styled.div`
 
 `
 
-function BackgroundImageContainer({ children }) {
+function BackgroundImageContainer({ children, image }) {
   return (
-    <div>
+    <StyledFlex >
       {children}
-    </div>
+     <StyledImage image={image} />
+    </StyledFlex>
   )
 }
 
