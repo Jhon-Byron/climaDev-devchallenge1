@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import BackgroundImageContainer from "../src/components/backgroundImageContainer/backgroundImageContainer";
 import Logo from "../src/components/logo/logo";
+import Input from "../src/components/form/input/input";
 
 const StyledDiv = styled.div`
   background-color: ${props => props.theme.colors.white};
@@ -21,7 +22,7 @@ export default function HomePage() {
     <BackgroundImageContainer>
       <StyledDiv>
         <Logo showImage type='vertical' />
-        <input />
+        <Input placeholder='Digite a cidade' />
       </StyledDiv>
     </BackgroundImageContainer>
   );
