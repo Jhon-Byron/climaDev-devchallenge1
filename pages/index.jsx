@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import BackgroundImageContainer from "../src/components/backgroundImageContainer/backgroundImageContainer";
+import BackgroundImageContainer from "../src/components/layouts/backgroundImageContainer/backgroundImageContainer";
 import Logo from "../src/components/logo/logo";
 import SearchCity from "../src/components/searchCity/searchCity";
 
