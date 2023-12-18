@@ -6,10 +6,11 @@ import styled from "styled-components";
 import Navbar from "../../../src/components/navbar/navbar";
 import Container from "../../../src/components/layouts/container/container";
 import ClimaCard from "../../../src/components/climaCard/climaCard";
+import Footer from "../../../src/components/footer/footer";
 
 const Body = styled.div`
   background-color: ${props => props.theme.colors.grey};
-  min-height: 100vh;
+  min-height: calc(100vh - 200px);
 `
 
 const Content = styled.div`
@@ -100,6 +101,7 @@ export default function InfoPage() {
           </InfoContainer>
         </Container>
       </Body>
+      <Footer/>
     </>
   );
 }
