@@ -13,6 +13,7 @@ const Title = styled.h6`
   font-weight: 700;
   font-size: 20px;
   text-align: center;
+  text-decoration: underline ;
   margin: 0;
   padding: 0;
 `

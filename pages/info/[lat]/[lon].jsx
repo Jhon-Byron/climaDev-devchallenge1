@@ -58,12 +58,7 @@ export default function InfoPage() {
       fetchCurrentInfo()
       fetchFutureInfo()
     }
-  }, [lat, lon])
-
-
-  const formatTemperature = (temperature) => {
-    return Math.round(temperature);
-  };  
+  }, [lat, lon]) 
 
   return (
     <>
@@ -71,7 +66,7 @@ export default function InfoPage() {
       <Body>
         <Container>
           <Content>
-            <Text>previsão do tempo para</Text>
+            <Text>Previsão do tempo para</Text>
             <CityName>{currentInfo?.name}, {currentInfo?.sys.country}</CityName>
           </Content>
           <InfoContainer>
@@ -79,28 +74,28 @@ export default function InfoPage() {
               title="Agora"
               icon={currentInfo?.weather[0].icon}
               description={currentInfo?.weather[0].description}
-              temp={formatTemperature(currentInfo?.main.temp)}
-              feels={formatTemperature(currentInfo?.main.feels_like)}
-              min={formatTemperature(currentInfo?.main.temp_min)}
-              max={formatTemperature(currentInfo?.main.temp_max)}
+              temp={currentInfo?.main.temp}
+              feels={currentInfo?.main.feels_like}
+              min={currentInfo?.main.temp_min}
+              max={currentInfo?.main.temp_max}
             />
              <ClimaCard
               title="Próximas 3 horas"
               icon={futureInfo?.list[0].weather[0].icon}
               description={futureInfo?.list[0].weather[0].description}
-              temp={formatTemperature(futureInfo?.list[0].main.temp)}
-              feels={formatTemperature(futureInfo?.list[0].main.feels_like)}
-              min={formatTemperature(futureInfo?.list[0].main.temp_min)}
-              max={formatTemperature(futureInfo?.list[0].main.temp_max)}
+              temp={futureInfo?.list[0].main.temp}
+              feels={futureInfo?.list[0].main.feels_like}
+              min={futureInfo?.list[0].main.temp_min}
+              max={futureInfo?.list[0].main.temp_max}
             /> 
             <ClimaCard
               title="Próximas 6 horas"
               icon={futureInfo?.list[1].weather[0].icon}
               description={futureInfo?.list[1].weather[0].description}
-              temp={formatTemperature(futureInfo?.list[1].main.temp)}
-              feels={formatTemperature(futureInfo?.list[1].main.feels_like)}
-              min={formatTemperature(futureInfo?.list[1].main.temp_min)}
-              max={formatTemperature(futureInfo?.list[1].main.temp_max)}
+              temp={futureInfo?.list[1].main.temp}
+              feels={futureInfo?.list[1].main.feels_like}
+              min={futureInfo?.list[1].main.temp_min}
+              max={futureInfo?.list[1].main.temp_max}
             /> 
           </InfoContainer>
         </Container>
