@@ -38,7 +38,7 @@ const InfoLine = styled.p`
   display: flex;
   justify-content: space-between;
   font-size: 20px;
-  padding:  20px;
+  padding: 0 20px;
 `
 
 const InfoTemperature = styled.span`
@@ -48,16 +48,25 @@ const InfoTemperature = styled.span`
 
 `
 
-export default function ClimaCard() {
+export default function ClimaCard({ title, icon, description, temp, feels, min, max }) {
   return ( 
     <StyledClimaCard>
-      <Title>Clima Card</Title>
+      <Title>{title}</Title>
       <BasicInfo>
-        <BasicInfoImg src="http://openweathermap.org/img/wn/11d@2x.png" />
-        <BasicInfoText>Algumas nuvens</BasicInfoText>
+        <BasicInfoImg src={`http://openweathermap.org/img/wn/${icon}@2x.png`} />
+        <BasicInfoText>{description}</BasicInfoText>
       </BasicInfo>
       <InfoLine>
-        Temperatura<InfoTemperature>29℃</InfoTemperature>
+        Temperatura<InfoTemperature>{temp}℃</InfoTemperature>
+      </InfoLine>
+      <InfoLine>
+        Sensação<InfoTemperature>{feels}℃</InfoTemperature>
+      </InfoLine>
+      <InfoLine>
+        Mínima<InfoTemperature blue>{min}℃</InfoTemperature>
+      </InfoLine>
+      <InfoLine>
+        Máxima<InfoTemperature red>{max}℃</InfoTemperature>
       </InfoLine>
     </StyledClimaCard>
   )
