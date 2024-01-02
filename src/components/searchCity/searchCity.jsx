@@ -24,7 +24,7 @@ export default function SearchCity() {
   }
 
   useEffect(() => {
-    if (searchText.length >= 3) fetchCitiesList()
+    if (searchText.length >= 1) fetchCitiesList()
     else setSuggestions([])
   }, [searchText])
 
